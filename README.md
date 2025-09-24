@@ -1,6 +1,6 @@
 # Magnetic data processing pipeline
 
-Based on an Oasis montaj python extension created by by Eric Petersen at the DGGS (Alaska Division of Geological & Geophysical Surveys https://dggs.alaska.gov; 2025-06-11).
+Based on an Oasis montaj python extension created by Eric Petersen at the DGGS (Alaska Division of Geological & Geophysical Surveys https://dggs.alaska.gov; 2025-06-11).
 
 The pipeline itself can be run either from a jupyter notebook or from
 the command line using the "AirMagTools" command line utility.
@@ -14,6 +14,8 @@ Check out the [Example](example_notebooks/Example.ipynb) and
 basic usage.
 
 To install, simply run `pip install .`.
+
+Additional tools for viewing the results of AirMagTools in Geosoft's Oasis Montaj can be found here: https://github.com/SagebrushGeoTools/OM_tools_to_support_AirMagTools
 
 ## Copyright
 
