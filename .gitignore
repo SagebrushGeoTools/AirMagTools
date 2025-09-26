@@ -4,5 +4,7 @@ __pycache__
 *~
 .ipynb_checkpoints/
 .idea
+.zip
 *.zip
+.out/
 *.out/
