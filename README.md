@@ -9,9 +9,7 @@ Jupyter notebooks additionally provide tools to plot and QC data in
 various ways as well as do simple data transformations (e.g. change
 map projection, merge datasets).
 
-Check out the [Example](Example.ipynb) and
-[gpr2025_4v2-tofty](gpr2025_4v2-tofty.ipynb) jupyter notebooks for
-basic usage.
+Check out the [Example](Example.ipynb) jupyter notebook for basic usage.
 
 To install, simply run `pip install .`.
 
