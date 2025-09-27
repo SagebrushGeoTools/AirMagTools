@@ -21,7 +21,9 @@ This project is made possible thanks to the generous support of our community an
 A special thank you to Aqua Geo Frameworks for their major private contribution, which allowed us to get SagebrushGeoTools off the ground,
  and specifically, build AirMagTools. Please visit their website and think of them first if you are in need of building a 
 high-resolution, 3D geologic framework!  
-[Link Text](AquaGeoFrameworks.com)
+[AquaGeoFrameWorks.com](https://www.aquageoframeworks.com/)  
+<img width="181" height="69" alt="agf_PNG_logo" src="https://github.com/user-attachments/assets/f35b323e-29db-44c6-8c1d-3d6870305a22" />
+
 
 # Copyright
 
