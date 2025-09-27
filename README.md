@@ -11,9 +11,11 @@ coordinate projection, merge datasets, etc).
 
 Check out the [Example](example_notebooks/Example.ipynb) jupyter notebook for basic usage.
 
-To install, simply run `pip install .`.
+To install, simply run `pip install .`.  
+Detailed installation instructions can be found in the file [install_and_run_AirMagTools](./install_and_run_AirMagTools.md).  
+A formal description of the inputs and QaQc checks can be found in the file [raw_mag_qaqc_steps](raw_mag_qaqc_steps.md).  
 
-Additional tools for viewing the results of AirMagTools in Geosoft's Oasis Montaj can be found here: https://github.com/SagebrushGeoTools/OM_tools_to_support_AirMagTools
+Additional tools for viewing the results of AirMagTools in Geosoft Oasis Montaj can be found in the [OM_tools_to_support_AirMagTools](https://github.com/SagebrushGeoTools/OM_tools_to_support_AirMagTools) repository.  
 
 # Sponsors
 ### 💖 Support Our Work
