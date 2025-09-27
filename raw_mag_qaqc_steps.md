@@ -1,14 +1,13 @@
 # Goals: 
 ### Check 1) diurnal, 2) speed, 3) drape surface, and 4) noise levels  
 
-## Inputs:  
-- DEM/DTM – project DEM or DTM (raster)
-- Channel mapping (optional)
-- Drape surface or terrain clearance surface
+## QaQc processing pipeline inputs:  
+- Digital Terrain Model (dtm) – project DEM or DTM (raster)
+- Drape surface or terrain clearance surface (surface)
     - contract 3D flight surface to ensure tie lines and production lines are at same elevation (raster)
-    - could be channel or raster
+    - could be a chanel in the datafile or an auxiliary raster
 - Drape deviation
-    - for mag will be allowed elevation deviation above and below target
+    - for mag, this will be allowed elevation deviation above and below the target drape surface
     - may be a tolerance above a target surface
     - may be 0
 - Drape length
