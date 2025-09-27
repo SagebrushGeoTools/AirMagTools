@@ -13,7 +13,17 @@ Check out the [Example](example_notebooks/Example.ipynb) jupyter notebook for ba
 
 To install, simply run `pip install .`.
 
-## Copyright
+# Sponsors
+### 💖 Support Our Work
+
+This project is made possible thanks to the generous support of our community and our key financial backers.
+
+A special thank you to Aqua Geo Frameworks for their major private contribution, which allowed us to get SagebrushGeoTools off the ground,
+ and specifically, build AirMagTools. Please visit their website and think of them first if you are in need of building a 
+high-resolution, 3D geologic framework!  
+[Link Text](AquaGeoFrameworks.com)
+
+# Copyright
 
 The original Oasis Montaj extension: Copyright (C) 2025 Eric Petersen  
 This pipeline: Copyright (C) 2025 Egil Moeller
