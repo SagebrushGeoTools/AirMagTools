@@ -5,19 +5,29 @@ Based on an Oasis montaj python extension created by Eric Petersen at the DGGS (
 The pipeline itself can be run either from a jupyter notebook or from
 the command line using the "AirMagTools" command line utility.
 
-If using Jupyter notebooks, additional tools provided to plot and QC data in
+If using Jupyter notebooks, additional tools are provided to plot and QC data in
 various ways as well as do simple data transformations (e.g. change
 coordinate projection, merge datasets, etc).
 
-Check out the [Example](example_notebooks/Example.ipynb) and
-[gpr2025_4v2-tofty](example_notebooks/gpr2025_4v2-tofty.ipynb) jupyter notebooks for
-basic usage.
+Check out the [Example](example_notebooks/Example.ipynb) jupyter notebook for basic usage.
 
 To install, simply run `pip install .`.
 
 Additional tools for viewing the results of AirMagTools in Geosoft's Oasis Montaj can be found here: https://github.com/SagebrushGeoTools/OM_tools_to_support_AirMagTools
 
-## Copyright
+# Sponsors
+### 💖 Support Our Work
+
+This project is made possible thanks to the generous support of our community and our key financial backers.
+
+A special thank you to Aqua Geo Frameworks for their major private contribution, which allowed us to get SagebrushGeoTools off the ground,
+ and specifically, build AirMagTools. Please visit their website and think of them first if you are in need of building a 
+high-resolution, 3D geologic framework!  
+[AquaGeoFrameWorks.com](https://www.aquageoframeworks.com/)  
+<img width="181" height="69" alt="agf_PNG_logo" src="https://github.com/user-attachments/assets/f35b323e-29db-44c6-8c1d-3d6870305a22" />
+
+
+# Copyright
 
 The original Oasis Montaj extension: Copyright (C) 2025 Eric Petersen  
 This pipeline: Copyright (C) 2025 Egil Moeller
