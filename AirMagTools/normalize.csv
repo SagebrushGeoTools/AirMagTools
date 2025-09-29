@@ -44,7 +44,7 @@ RALT,ralt
 LALT,lalt
 DEMIFSAR,dtm
 DEM,dtm
-DTM,dtm
+DTM,dtm_fix_me
 BALT,birdalt
 DIURNRAW,diurnalraw
 Diurnal,diurnal
