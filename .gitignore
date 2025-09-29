@@ -8,3 +8,4 @@ __pycache__
 *.zip
 .out/
 *.out/
+example_datasets/
