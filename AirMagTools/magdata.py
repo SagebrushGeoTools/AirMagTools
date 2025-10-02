@@ -158,7 +158,7 @@ class MagData:
                         ).assign(distance=distances)
 
         results = results.assign(
-            gpsalt_diff = np.abs(results.gpsalt_1 - results.gpsalt_2),
+            gpsalt_diff = np.round(np.abs(results.gpsalt_1 - results.gpsalt_2), 2),
             magcom_diff = np.abs(results.magcom_1 - results.magcom_2),
             maguncom_diff = np.abs(results.maguncom_1 - results.maguncom_2))
         
