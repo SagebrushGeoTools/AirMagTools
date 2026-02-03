@@ -12,8 +12,22 @@ from shapely.geometry import Point
 from scipy.spatial import cKDTree
 import matplotlib.gridspec as gridspec
 import copy
+import msgpack
+import msgpack_numpy as _msgpack_numpy
+_msgpack_numpy.patch()
 from . import mapplot
 from . import loader
+
+def _coerce_series(s):
+    if s.dtype != "O":
+        return s
+    try:
+        return s.astype(float)
+    except (ValueError, TypeError):
+        return s
+
+def _df_to_arrays(df):
+    return {col: _coerce_series(df[col]).values for col in df.columns}
 
 class MagData:
     def __init__(self, data: pd.DataFrame, **meta):
@@ -22,13 +36,18 @@ class MagData:
         
     @classmethod
     def load(cls, path: str, **kws):
-        """Load mag data from file. Filename should end in .mag.zip or .csv"""
-        if path.endswith(".mag.zip"):
+        """Load mag data from file. Filename should end in .zip, .msgpack, or .csv"""
+        if path.endswith(".zip"):
             with zipfile.ZipFile(path, 'r') as z:
                 with z.open("data.csv") as f:
                     df = pd.read_csv(f)
                 with z.open("meta.yaml") as f:
                     meta = yaml.safe_load(f)
+        elif path.endswith(".msgpack"):
+            with open(path, 'rb') as f:
+                raw = msgpack.load(f, strict_map_key=False)
+            df = pd.DataFrame(raw["data"])
+            meta = raw.get("meta", {})
         else:
             df = loader.parse(path)
             meta = {}
@@ -37,12 +56,16 @@ class MagData:
         return cls(df.set_index(["line", "fidcount"]), **meta)
 
     def save(self, path: str):
-        """Save mag data to file. Filename should end in .mag.zip"""
-        with zipfile.ZipFile(path, 'w') as z:
-            csv_buffer = StringIO()
-            self.data.reset_index().to_csv(csv_buffer, index=False)
-            z.writestr("data.csv", csv_buffer.getvalue())
-            z.writestr("meta.yaml", yaml.dump(self.meta))
+        """Save mag data to file. Filename should end in .mag.zip or .mag.msgpack"""
+        if path.endswith(".msgpack"):
+            with open(path, 'wb') as f:
+                msgpack.dump({"data": _df_to_arrays(self.data.reset_index()), "meta": self.meta}, f)
+        else:
+            with zipfile.ZipFile(path, 'w') as z:
+                csv_buffer = StringIO()
+                self.data.reset_index().to_csv(csv_buffer, index=False)
+                z.writestr("data.csv", csv_buffer.getvalue())
+                z.writestr("meta.yaml", yaml.dump(self.meta))
 
     def __repr__(self):
         self.get_sample_frequency()

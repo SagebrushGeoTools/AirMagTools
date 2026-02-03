@@ -11,7 +11,9 @@ setup(
         "geopandas",
         "contextily",
         "scipy",
-        "pyproj"
+        "pyproj",
+        "msgpack",
+        "msgpack-numpy"
     ],
     include_package_data=True,
     package_data={
