@@ -49,7 +49,7 @@ class MagData:
         if path.endswith(".zip"):
             with zipfile.ZipFile(path, 'r') as z:
                 with z.open("data.csv") as f:
-                    df = pd.read_csv(f, dtype_backend="numpy_nullable)
+                    df = pd.read_csv(f, dtype_backend="numpy_nullable")
                 with z.open("meta.yaml") as f:
                     meta = yaml.safe_load(f)
         elif path.endswith(".msgpack"):
