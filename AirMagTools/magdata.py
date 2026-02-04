@@ -27,7 +27,16 @@ def _coerce_series(s):
         return s
 
 def _df_to_arrays(df):
-    return {col: _coerce_series(df[col]).values for col in df.columns}
+    out = {}
+    for col in df.columns:
+        s = df[col]
+        if pd.api.types.is_string_dtype(s):
+            out[col] = s.astype(object).to_numpy()
+        elif hasattr(s.dtype, "numpy_dtype"):
+            out[col] = s.to_numpy()
+        else:
+            out[col] = _coerce_series(s).to_numpy()
+    return out    
 
 class MagData:
     def __init__(self, data: pd.DataFrame, **meta):
@@ -40,7 +49,7 @@ class MagData:
         if path.endswith(".zip"):
             with zipfile.ZipFile(path, 'r') as z:
                 with z.open("data.csv") as f:
-                    df = pd.read_csv(f)
+                    df = pd.read_csv(f, dtype_backend="numpy_nullable)
                 with z.open("meta.yaml") as f:
                     meta = yaml.safe_load(f)
         elif path.endswith(".msgpack"):
