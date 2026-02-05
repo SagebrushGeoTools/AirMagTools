@@ -88,8 +88,8 @@ class MagData:
     def get_sample_frequency(self):
         if "sample_frequency" not in self.meta:
             timediffs = self.data.utctime - self.data.utctime.shift(1)
-            line_vals = self.data.index.get_level_values('line')
-            same_line = line_vals == line_vals.shift(1)
+            line_vals = self.data.index.get_level_values('line').to_series(index=range(len(self.data)))
+            same_line = (line_vals == line_vals.shift(1)).values
             self.meta["sample_frequency"] = float(1 / timediffs[same_line].mode()[0])
         return self.meta["sample_frequency"]
 
