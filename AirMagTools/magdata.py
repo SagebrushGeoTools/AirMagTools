@@ -88,11 +88,9 @@ class MagData:
     def get_sample_frequency(self):
         if "sample_frequency" not in self.meta:
             timediffs = self.data.utctime - self.data.utctime.shift(1)
-            self.meta["sample_frequency"] = float(
-                1 / (timediffs[
-                    self.data.index.get_level_values('line')
-                    == pd.Series(self.data.index.get_level_values('line')).shift(1)
-                ].mode()[0]))
+            line_vals = self.data.index.get_level_values('line')
+            same_line = line_vals == line_vals.shift(1)
+            self.meta["sample_frequency"] = float(1 / timediffs[same_line].mode()[0])
         return self.meta["sample_frequency"]
 
     def as_geodataframe(self):
